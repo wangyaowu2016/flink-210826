@@ -39,6 +39,7 @@ public class Flink02_WordCount_Stream_Bounded {
         //4.将单词组成Tuple2元组 （Lambda写法）
         SingleOutputStreamOperator<Tuple2<String, Integer>> wordToOneDStream = wordDStream.map(value -> Tuple2.of(value, 1)).returns(Types.TUPLE(Types.STRING,Types.INT));
 
+
         //5.将相同的单词聚和到一块
         KeyedStream<Tuple2<String, Integer>, String> keyedStream = wordToOneDStream.keyBy(new KeySelector<Tuple2<String, Integer>, String>() {
             @Override

@@ -41,7 +41,6 @@ public class Flink04_Source_Custom {
         @Override
         public void cancel() {
             isRunning = false;
-
         }
     }
 }
