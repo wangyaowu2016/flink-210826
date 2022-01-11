@@ -26,7 +26,7 @@ public class Flink04_Transform_Connect {
         connect.map(new CoMapFunction<Integer, String, String>() {
             @Override
             public String map1(Integer value) throws Exception {
-                return (value + 1) + "";
+                return (value + 1) + "1";
             }
 
             @Override
