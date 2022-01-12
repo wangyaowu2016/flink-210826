@@ -64,6 +64,7 @@ public class Flink07_Project_UV {
 
             @Override
             public void processElement(Tuple2<String, Long> value, Context ctx, Collector<Tuple2<String, Integer>> out) throws Exception {
+
                 //将数据中的userId存入set集合中做去重
                 uids.add(value.f1);
 
