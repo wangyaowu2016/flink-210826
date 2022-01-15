@@ -24,7 +24,8 @@ public class Flink10_EventTime_WaterMark_TimeWindow {
         env.setParallelism(2);
 
         //2.从端口读取数据
-        DataStreamSource<String> streamSource = env.socketTextStream("localhost", 9999);
+//        DataStreamSource<String> streamSource = env.socketTextStream("localhost", 9999);
+        DataStreamSource<String> streamSource = env.readTextFile("input/sensor.txt");
 
         //3.将数据转为WaterSensor
         SingleOutputStreamOperator<WaterSensor> map = streamSource.map(new MapFunction<String, WaterSensor>() {
